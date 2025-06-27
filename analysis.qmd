@@ -13,4 +13,13 @@ library(primer.data)
 ```
 
 
-Voting behavior is influenced by a mix of personal preferences and demographic factors such as age, education, and political affiliation. Using survey data collected in March 2024 from thousands of U.S. voters, we estimate what proportion of votes will be cast for Joe Biden in the 2024 presidential election.
+Voting behavior is influenced by a mix of personal preferences and demographic factors such as age, education, and political affiliation. Using survey data collected in March 2024 from thousands of U.S. voters, we estimate what proportion of votes will be cast for Joe Biden in the 2024 presidential election. However, our estimates rely on the assumption that the survey data accurately represents the entire population and that no unmeasured factors bias the results, which may not fully hold true.
+
+
+
+
+
+
+
+
+
