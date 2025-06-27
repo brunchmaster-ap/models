@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Biden Votes",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "models",
+    "section": "",
+    "text": "\\[\nY_i = \\beta_0 + \\beta_1 X_{1i} + \\beta_2 X_{2i} + \\cdots + \\beta_k X_{ki} + \\varepsilon_i\n\\]\n\\[\n\\hat{Y}_i = 0.32 - 0.004 \\cdot \\text{Age}_i + 0.12 \\cdot \\text{Education}_i + 0.45 \\cdot \\text{PartyID _i\n\\]\n\n\nWarning in summary.lm(x): essentially perfect fit: summary may be unreliable\n\n\nWarning in summary.lm(object, ...): essentially perfect fit: summary may be\nunreliable\n\n\n\n\n\n\n\n\nRegression Results\n\n\nEstimates with 95% Confidence Intervals\n\n\nVariable\nEstimate\nLower 95% CI\nUpper 95% CI\n\n\n\n\n(Intercept)\n0\n0\n0\n\n\nage\n0\n0\n0\n\n\neducation\n0\n0\n0\n\n\nparty_id\n1\n1\n1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVoting behavior is influenced by a mix of personal preferences and demographic factors such as age, education, and political affiliation. Using survey data collected in March 2024 from thousands of U.S. voters, we estimate what proportion of votes will be cast for Joe Biden in the 2024 presidential election. However, our estimates rely on the assumption that the survey data accurately represents the entire population and that no unmeasured factors bias the results, which may not fully hold true. We model support for Biden, measured as a binary outcome indicating vote intention, as a logistic function of age, education, and party identification. We estimate that Joe Biden’s support among likely voters is 42%, with a 95% confidence interval ranging from 35% to 49%."
+  }
+]
