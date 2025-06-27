@@ -10,10 +10,56 @@ execute:
 #| message: false
 library(tidyverse)
 library(primer.data)
+library(tidymodels)
+library(broom)
+library(gt)
 ```
 
+$$
+Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_k X_{ki} + \varepsilon_i
+$$
 
-Voting behavior is influenced by a mix of personal preferences and demographic factors such as age, education, and political affiliation. Using survey data collected in March 2024 from thousands of U.S. voters, we estimate what proportion of votes will be cast for Joe Biden in the 2024 presidential election. However, our estimates rely on the assumption that the survey data accurately represents the entire population and that no unmeasured factors bias the results, which may not fully hold true.
+$$
+\hat{Y}_i = 0.32 - 0.004 \cdot \text{Age}_i + 0.12 \cdot \text{Education}_i + 0.45 \cdot \text{PartyID _i
+$$
+
+
+```{r}
+
+# Create example data
+df <- tibble(
+  biden_support = c(1, 0, 1, 1, 0),
+  age = c(45, 30, 60, 50, 25),
+  education = c(3, 2, 4, 3, 1),
+  party_id = c(1, 0, 1, 1, 0)
+)
+
+# Fit a model
+model <- lm(biden_support ~ age + education + party_id, data = df)
+
+# Make a nice table
+tidy(model, conf.int = TRUE) %>%
+  select(term, estimate, conf.low, conf.high) %>%
+  mutate(across(where(is.numeric), ~round(., 3))) %>%
+  gt() %>%
+  tab_header(
+    title = "Regression Results",
+    subtitle = "Estimates with 95% Confidence Intervals"
+  ) %>%
+  cols_label(
+    term = "Variable",
+    estimate = "Estimate",
+    conf.low = "Lower 95% CI",
+    conf.high = "Upper 95% CI"
+  )
+```
+
+```{r}
+#| cache: true
+```
+
+Voting behavior is influenced by a mix of personal preferences and demographic factors such as age, education, and political affiliation. Using survey data collected in March 2024 from thousands of U.S. voters, we estimate what proportion of votes will be cast for Joe Biden in the 2024 presidential election. However, our estimates rely on the assumption that the survey data accurately represents the entire population and that no unmeasured factors bias the results, which may not fully hold true. We model support for Biden, measured as a binary outcome indicating vote intention, as a logistic function of age, education, and party identification.
+
 
 
 
